@@ -1,0 +1,29 @@
+---
+import Github from './socials/Github.astro';
+import Twitter from './socials/Twitter.astro';
+import Linkedin from './socials/Linkedin.astro';
+
+const socials = [
+  { name: 'GitHub', href: 'https://github.com/Ruchita1010' },
+  { name: 'Twitter', href: 'https://x.com/_ruchita1010' },
+  { name: 'Linkedin', href: 'https://linkedin.com/in/ruchita-gosavi' },
+];
+---
+
+<footer>
+  <div class="grid grid-cols-3 justify-items-center items-end">
+    <Github />
+    <Twitter />
+    <Linkedin />
+    <div class="col-span-3 w-full border-t border-foreground/30"></div>
+    {
+      socials.map(({ name, href }) => (
+        <a
+          href={href}
+          class="w-full py-3 text-center text-sm md:text-base tracking-wide">
+          {name}
+        </a>
+      ))
+    }
+  </div>
+</footer>

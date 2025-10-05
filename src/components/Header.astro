@@ -1,0 +1,37 @@
+---
+const pages = [
+  { name: 'home', href: '/' },
+  { name: 'projects', href: '/projects' },
+  { name: 'blogs', href: '/blogs' },
+  { name: 'random', href: '/random' },
+];
+
+const { pathname } = Astro.url;
+---
+
+<header>
+  <nav class="my-10">
+    <ul
+      class="flex justify-center flex-wrap sm:flex-nowrap -space-x-0 xs:-space-x-2 md:-space-x-4">
+      {
+        pages.map(({ name, href }) => {
+          const isActive = pathname === href;
+
+          return (
+            <li class="mt-2 sm:mt-0">
+              <a
+                href={href}
+                aria-current={isActive ? 'page' : undefined}
+                class={`inline-block w-24 md:w-32 px-2 md:px-4 py-1 text-xs md:text-sm text-center font-medium uppercase tracking-wide border rounded-full 
+                ${isActive ? 'bg-foreground text-background' : 'hover:scale-98'}`}>
+                <span class="inline-block w-5/6 py-1.5 border-y border-foreground/25">
+                  {name}
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</header>
