@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Novas Strike",
+    "description": "Multiplayer space shooter game.",
+    "imagePath": "/src/assets/projects/novas-strike.png",
+    "repo": "https://github.com/Ruchita1010/novas-strike",
+    "live": "https://novas-strike.onrender.com"
+  },
+  {
+    "id": 2,
+    "title": "Haikuist",
+    "description": "Social platform for sharing haikus.",
+    "imagePath": "/src/assets/projects/haikuist.png",
+    "repo": "https://github.com/Ruchita1010/haikuist",
+    "live": "https://haikuist.netlify.app"
+  },
+  {
+    "id": 3,
+    "title": "Aoi Sekai",
+    "description": "VS Code color theme.",
+    "imagePath": "/src/assets/projects/aoi-sekai.png",
+    "repo": "https://github.com/Ruchita1010/aoi-sekai",
+    "live": "https://marketplace.visualstudio.com/items?itemName=RuchitaGosavi.aoi-sekai"
+  },
+  {
+    "id": 4,
+    "title": "Maze Escape",
+    "description": "Maze escaping game on Reddit.",
+    "imagePath": "/src/assets/projects/maze-escape.png",
+    "repo": "https://github.com/Ruchita1010/maze-escape",
+    "live": "https://www.reddit.com/r/redditapptest/comments/1hglreg/escape_the_maze/"
+  },
+  {
+    "id": 5,
+    "title": "Homeward Bound",
+    "description": "3D exploration game with open-world elements.",
+    "imagePath": "/src/assets/projects/homeward-bound.png",
+    "repo": "https://github.com/Ruchita1010/homeward-bound",
+    "live": "https://ruchita1010.github.io/homeward-bound/"
+  },
+  {
+    "id": 6,
+    "title": "Where is Waldo",
+    "description": "Photo-tagging puzzle game.",
+    "imagePath": "/src/assets/projects/where-is-waldo.png",
+    "repo": "https://github.com/Ruchita1010/where-is-waldo",
+    "live": "https://ruchita1010.github.io/where-is-waldo"
+  }
+]

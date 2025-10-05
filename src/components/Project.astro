@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+  title: string;
+  imagePath: string;
+  description: string;
+  live: string;
+  repo: string;
+};
+
+const { title, imagePath, description, live, repo } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/projects/*.{jpeg,jpg,png,webp,gif}'
+);
+
+if (!images[imagePath]) {
+  console.log(
+    `"${imagePath}" does not exist in glob: "/src/assets/projects/*.{jpeg,jpg,png,webp,gif}"`
+  );
+}
+---
+
+<div class="px-3">
+  <div class="relative overflow-hidden">
+    <Image
+      src={images[imagePath]()}
+      alt={`Preview of ${title} interface`}
+      width={1366}
+      height={768}
+      class="hover:scale-102 transition-transform duration-300 ease-in-out"
+    />
+    <div class="absolute top-0 left-0 w-full h-full bg-stone-500/20"></div>
+  </div>
+  <div class="space-y-1.5 py-2 tracking-wide">
+    <div class="flex justify-between items-center">
+      <h2 class="font-medium uppercase">
+        {title}
+      </h2>
+      <div class="space-x-4 text-sm">
+        <a href={repo} target="_blank" class="underline">GitHub</a>
+        <a href={live} target="_blank" class="underline">Live</a>
+      </div>
+    </div>
+    <p class="text-sm text-foreground/60">{description}</p>
+  </div>
+</div>
