@@ -17,6 +17,12 @@
     --background: hsl(60, 100%, 97%);
     --foreground: hsl(0, 0%, 9%);
   }
+
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
+  }
 }
 
 body {
