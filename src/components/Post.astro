@@ -1,0 +1,26 @@
+---
+import type { InferEntrySchema } from 'astro:content';
+import { formatDate } from '../utils';
+
+type Props = {
+  id: string;
+  data: InferEntrySchema<'blog'>;
+};
+
+const { id, data } = Astro.props;
+---
+
+<a href={`/blog/${id}`}>
+  <div
+    class="py-4 flex justify-between items-start gap-3 tracking-wide border-b border-foreground/20">
+    <div class="flex flex-col">
+      <span class="text-lg font-medium">{data.title}</span>
+      <div class="space-x-2 text-xs text-foreground/70">
+        {data.tags.map((tag: string) => <span>#{tag}</span>)}
+      </div>
+    </div>
+    <span class="flex-shrink-0 text-sm text-foreground/70">
+      {formatDate(data.date)}
+    </span>
+  </div>
+</a>
