@@ -6,7 +6,7 @@ import Post from '../../components/Post.astro';
 const posts = await getCollection('blog');
 ---
 
-<Layout>
+<Layout title="Blog">
   <h1 class="sr-only">My blog</h1>
   <div class="w-11/12 mx-auto my-16">
     {posts.map((post) => <Post id={post.id} {...post.data} />)}
