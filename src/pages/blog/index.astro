@@ -9,6 +9,6 @@ const posts = await getCollection('blog');
 <Layout>
   <h1 class="sr-only">My blog</h1>
   <div class="w-11/12 mx-auto my-16">
-    {posts.map((post) => <Post id={post.id} data={post.data} />)}
+    {posts.map((post) => <Post id={post.id} {...post.data} />)}
   </div>
 </Layout>
