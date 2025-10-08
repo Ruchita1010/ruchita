@@ -4,7 +4,7 @@ import Footer from '../components/footer/Footer.astro';
 import '@fontsource-variable/mulish';
 import '../styles/global.css';
 
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,7 +14,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Ruchita</title>
+    <title>{pageTitle} | Ruchita</title>
   </head>
   <body>
     <div class="mx-2 md:mx-10 lg:mx-35 border-x border-foreground/10">
