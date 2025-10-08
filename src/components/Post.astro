@@ -11,17 +11,20 @@ type Props = {
 const { id, title, date, tags } = Astro.props;
 ---
 
-<a href={`/blog/${id}`}>
-  <div
-    class="py-4 flex justify-between items-start gap-3 tracking-wide border-b border-foreground/20">
-    <div class="flex flex-col">
-      <span class="text-lg font-medium">{title}</span>
-      <div class="space-x-2 text-xs text-foreground/70">
-        {tags.map((tag: string) => <span>#{tag}</span>)}
-      </div>
+<a
+  href={`/blog/${id}`}
+  class="block px-2 py-6 tracking-wide border-b border-foreground/10 transition-colors duration-300 ease-in-out hover:bg-foreground/5">
+  <h2 class="mb-2 text-lg font-medium">{title}</h2>
+  <div class="flex justify-between items-center gap-1">
+    <div aria-label="Tags" class="text-xs text-foreground/50 divide-x">
+      {
+        tags.map((tag: string) => (
+          <span class="not-first:pl-2 not-last:pr-2">{tag}</span>
+        ))
+      }
     </div>
-    <span class="flex-shrink-0 text-sm text-foreground/70">
+    <time datetime={date} class="xs:flex-shrink-0 text-sm text-foreground">
       {formatDate(date)}
-    </span>
+    </time>
   </div>
 </a>
