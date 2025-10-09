@@ -1,11 +1,11 @@
 ---
-title: 'From Concept to Scene: 3D in React'
+title: 'Creating 3D Scene with React Three Fiber'
 date: '2023-06-12'
 tags: ['react', 'react-three-fiber']
-slug: 'concept-to-scene-3d-react'
+slug: 'creating-3d-scene-with-r3f'
 ---
 
-# From Concept to Scene: 3D in React
+# Creating 3D Scene with React Three Fiber
 
 If you've ever thought of creating those amazing Three.js websites but with the simplicity and familiarity of React, then you're in for a treat. [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction) lets you do just that!
 
