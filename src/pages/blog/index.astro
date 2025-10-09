@@ -7,7 +7,7 @@ const posts = await getCollection('blog');
 ---
 
 <Layout pageTitle="Blog">
-  <h1 class="sr-only">My blog</h1>
+  <h1 class="sr-only">Blog</h1>
   <div class="w-11/12 mx-auto my-16">
     {posts.map((post) => <Post id={post.id} {...post.data} />)}
   </div>
