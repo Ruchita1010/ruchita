@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/footer/Footer.astro';
 import '@fontsource-variable/mulish';
+import mulishWoff2 from '@fontsource-variable/mulish/files/mulish-latin-wght-normal.woff2?url';
 import '../styles/global.css';
 
 const { pageTitle } = Astro.props;
@@ -13,6 +14,13 @@ const { pageTitle } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={mulishWoff2}
+      crossorigin="anonymous"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle} | Ruchita</title>
   </head>
