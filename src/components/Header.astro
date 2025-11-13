@@ -16,7 +16,7 @@ const { pathname } = Astro.url;
       {
         pages.map(({ name, href }) => {
           // in prod, pathname is appended with '/'
-          const isActive = pathname === href || pathname + '/' === href;
+          const isActive = pathname === href || pathname === href + '/';
 
           return (
             <li class="mt-2 sm:mt-0">
