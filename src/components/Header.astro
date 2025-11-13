@@ -15,7 +15,8 @@ const { pathname } = Astro.url;
       class="flex justify-center flex-wrap sm:flex-nowrap -space-x-0 xs:-space-x-2 md:-space-x-4">
       {
         pages.map(({ name, href }) => {
-          const isActive = pathname === href;
+          // in prod, pathname is appended with '/'
+          const isActive = pathname === href || pathname + '/' === href;
 
           return (
             <li class="mt-2 sm:mt-0">
