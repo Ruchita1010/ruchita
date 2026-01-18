@@ -4,11 +4,13 @@
 :root {
   --background: hsl(0, 0%, 9%);
   --foreground: hsl(60, 100%, 97%);
+  --inline-code-bg: hsl(0, 0%, 17%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-inline-code-bg: var(--inline-code-bg);
   --font-sans: 'Mulish Variable', 'sans-serif';
   --breakpoint-xs: 30rem;
 }
@@ -16,6 +18,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: hsl(60, 100%, 97%);
+    --inline-code-bg: hsl(60, 27%, 92%);
     --foreground: hsl(0, 0%, 9%);
   }
 
@@ -29,4 +32,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Removes backticks around inline code */
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none;
+}
+
+@custom-variant prose-inline-code {
+  &.prose :where(:not(pre) > code):not(:where([class~='not-prose'] *)) {
+    @slot;
+  }
 }
