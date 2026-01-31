@@ -1,14 +1,14 @@
 ---
-import { formatDate } from '../utils';
-
 type Props = {
   id: string;
   title: string;
-  date: string;
+  date: Date;
   tags: string[];
 };
 
 const { id, title, date, tags } = Astro.props;
+
+const formattedISO = date.toISOString().split('T')[0];
 ---
 
 <a
@@ -23,8 +23,16 @@ const { id, title, date, tags } = Astro.props;
         ))
       }
     </div>
-    <time datetime={date} class="xs:flex-shrink-0 text-sm text-foreground">
-      {formatDate(date)}
+    <time
+      datetime={formattedISO}
+      class="xs:flex-shrink-0 text-sm text-foreground">
+      {
+        date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: '2-digit',
+        })
+      }
     </time>
   </div>
 </a>
