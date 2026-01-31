@@ -34,6 +34,12 @@ body {
   color: var(--foreground);
 }
 
+/* Removes speech marks around quotes */
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: none;
+}
+
 /* Removes backticks around inline code */
 .prose :not(pre) > code::before,
 .prose :not(pre) > code::after {
